@@ -1,0 +1,24 @@
+<section class="d-flex justify-content-center align-items-center vh-100">
+  <form (ngSubmit)="handleLogin(loginForm)" class="login container rounded-3 p-4" action="" [formGroup]="loginForm">
+        <img class="logo d-block mx-auto mb-2" src="assets/imgs/logo.png" alt="">
+        <h2 class="text-center loginWord mb-4">
+          Login 
+        </h2>
+        <label for="" class="mb-2">Email <span class="star">*</span></label>
+        <input class="form-control mb-3 py-2 " type="email" placeholder="Enter Your Email" formControlName="email">
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+            <p *ngIf="loginForm.get('email')?.getError('required')" style="color: red;">Email is required</p>
+            <p *ngIf="loginForm.get('email')?.getError('pattern')" style="color: red;">Invalid Email</p>
+        </div>
+      
+        <label for="" class="mb-2">Password <span class="star">*</span></label>
+        <input class="form-control mb-4 py-2" type="password" placeholder="Enter Your Password" formControlName="password">
+        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.getError('required')" style="color: red;">Password is required</p>
+          <p *ngIf="loginForm.get('password')?.getError('minlength')" style="color: red;">min length is 8</p>
+      </div>
+        <button [disabled]="!loginForm.valid" type="submit" class="btn w-100 text-white mb-3 py-2 d-flex justify-content-center align-items-center">Login <span *ngIf="isloading" class="ms-2 spinner-border"></span></button>
+        <p class="text-center text-muted">Don't have an account? <span routerLink="/signup" class="register text-decoration-underline fw-bold">Register</span></p>
+  </form>
+
+</section>

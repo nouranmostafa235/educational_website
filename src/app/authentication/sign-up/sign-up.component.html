@@ -1,0 +1,103 @@
+<section class="d-flex justify-content-center align-items-center py-5">
+    <form (ngSubmit)="handleSignup(signUpForm)" class="login container rounded-3 p-4" [formGroup]="signUpForm">
+        <div>
+            <img class="logo d-block mx-auto mb-2" src="assets/imgs/logo.png" alt="">
+            <h2 class="text-center loginWord mb-4">
+                Register
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="" class="mb-2">First Name <span class="star">*</span></label>
+                    <input class="form-control py-2" type="text" placeholder="Enter Your First Name"
+                        formControlName="first_name">
+                    <div *ngIf="signUpForm.get('first_name')?.errors && signUpForm.get('first_name')?.touched">
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('first_name')?.getError('required')">First
+                            Name is required</p>
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('first_name')?.getError('minlength')">
+                            First Name must be more than 2 letters</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="" class="mb-2">Last Name <span class="star">*</span></label>
+                    <input class="form-control py-2 " type="text" placeholder="Enter Your Last Name"
+                        formControlName="last_name">
+                    <div *ngIf="signUpForm.get('last_name')?.errors && signUpForm.get('last_name')?.touched">
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('last_name')?.getError('required')">Last
+                            Name is required</p>
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('last_name')?.getError('minlength')">Last
+                            Name must be more than 2 letters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="" class="mb-2">Email <span class="star">*</span></label>
+                <input class="form-control py-2 " type="email" placeholder="Enter Your Email" formControlName="email">
+                <div *ngIf="signUpForm.get('email')?.errors && signUpForm.get('email')?.touched">
+                    <p class="errorAlert ms-2" *ngIf="signUpForm.get('email')?.getError('required')">Email is required
+                    </p>
+                    <p class="errorAlert ms-2" *ngIf="signUpForm.get('email')?.getError('email')">Invalid Email</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="" class="mb-2">Password <span class="star">*</span></label>
+                    <input class="form-control py-2" type="password" placeholder="Enter Your Password"
+                        formControlName="password">
+
+                    <div *ngIf="signUpForm.get('password')?.errors && signUpForm.get('password')?.touched">
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('password')?.getError('required')">Password is
+                            required</p>
+                        <p class="errorAlert ms-2" *ngIf="signUpForm.get('password')?.getError('minlength')">Password
+                            must be more than 7 characters</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="" class="mb-2">Re-Password <span class="star">*</span></label>
+                    <input class="form-control py-2" type="password" placeholder="Confirm Your Password"
+                        formControlName="password_confirmation">
+                    <div
+                        *ngIf="signUpForm.get('password_confirmation')?.errors && signUpForm.get('password_confirmation')?.touched">
+                        <p class="errorAlert ms-2"
+                            *ngIf="signUpForm.get('password_confirmation')?.getError('required')">Password comfirmation
+                            is
+                            required</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="mb-2">Phone Number <span class="star">*</span></label>
+                <input class="form-control py-2 " type="tel" placeholder="Enter Your Phone Number"
+                    formControlName="phone">
+
+                <div *ngIf="signUpForm.get('phone')?.errors && signUpForm.get('phone')?.touched">
+                    <p class="errorAlert ms-2" *ngIf="signUpForm.get('phone')?.getError('required')">Phone is
+                        required</p>
+                    <p class="errorAlert ms-2" *ngIf="signUpForm.get('phone')?.getError('pattern')">Invalid Phone Number
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="" class="mb-2">Your Role <span class="star">*</span></label>
+                <select class="form-select py-2" name="role" id="" formControlName="role">
+                    <option value="" selected="selected">Select role</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+
+                </select>
+                <div *ngIf="signUpForm.get('role')?.errors && signUpForm.get('role')?.touched">
+                    <p class="errorAlert ms-2" *ngIf="signUpForm.get('role')?.getError('required')">Role is
+                        required</p>
+
+                </div>
+            </div>
+            <button  [disabled]="!signUpForm.valid" type="submit" class="btn w-100 text-white mb-3 py-2 d-flex justify-content-center align-items-center">Register <span *ngIf="isloading" class="ms-2 spinner-border"></span>
+            </button>
+            <p class="text-center text-muted">Already have an account? <span routerLink="/signin"
+                    class="register text-decoration-underline fw-bold">Login</span></p>
+        </div>
+    </form>
+</section>

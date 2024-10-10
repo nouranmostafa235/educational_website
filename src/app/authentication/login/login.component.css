@@ -1,0 +1,28 @@
+section{
+    background-color: #e9ecf0;
+}
+.login{
+    box-shadow: -6px 7px 23px -1px rgba(161,174,214,0.7);
+    width: 40%;
+    background-color: #ffffff;
+}
+.logo{
+    width: 10%;
+}
+.loginWord{
+    color: #056aff;
+}
+.btn{
+    background-color: #056aff;
+}
+.register{
+    color: #056aff;
+    cursor: pointer;
+}
+.star{
+    color: red;
+}
+.error p{
+    color: red;
+    font-size: 13px;
+}
