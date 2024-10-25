@@ -1,4 +1,5 @@
 <section class="d-flex justify-content-center align-items-center py-5">
+
     <form (ngSubmit)="handleSignup(signUpForm)" class="login container rounded-3 p-4" [formGroup]="signUpForm">
         <div>
             <img class="logo d-block mx-auto mb-2" src="assets/imgs/logo.png" alt="">
@@ -43,7 +44,7 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="" class="mb-2">Password <span class="star">*</span></label>
-                    <input class="form-control py-2" type="password" placeholder="Enter Your Password"
+                    <input class="form-control py-2" type="text" placeholder="Enter Your Password"
                         formControlName="password">
 
                     <div *ngIf="signUpForm.get('password')?.errors && signUpForm.get('password')?.touched">
@@ -55,7 +56,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="" class="mb-2">Re-Password <span class="star">*</span></label>
-                    <input class="form-control py-2" type="password" placeholder="Confirm Your Password"
+                    <input class="form-control py-2" type="text" placeholder="Confirm Your Password"
                         formControlName="password_confirmation">
                     <div
                         *ngIf="signUpForm.get('password_confirmation')?.errors && signUpForm.get('password_confirmation')?.touched">
@@ -101,3 +102,4 @@
         </div>
     </form>
 </section>
+

@@ -1,0 +1,73 @@
+.container{
+    box-shadow: -8px 8px 13px -5px rgba(173,170,173,1);
+}
+.image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+}
+.number{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #07f;
+    color: white;
+}
+.number2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff1d86;
+    color: white;
+}
+.number3{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #16d03b;
+    color: white;
+}
+.number4{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff7e3e;
+    color: white;
+}
+.activity1{
+    background-color: #f0f7ff;
+}
+.activity2{
+    background-color: #fff0f7;
+}
+.activity3{
+    background-color: #f0fff3;
+}
+.activity4{
+    background-color: #fff5f0;
+}
+.scrollable{
+    height: 300px;
+    overflow-y: auto; 
+}
+.scrollable::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #056AFF; /* Scrollbar color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
+}

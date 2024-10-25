@@ -1,0 +1,27 @@
+/* Remove the circle around the day cells */
+::ng-deep .mat-calendar-body-cell {
+    box-shadow: none !important; /* Remove any shadow effect */
+    border-radius: 0 !important; /* Remove any border radius */
+  }
+  
+  /* Remove the circle for today's date */
+  ::ng-deep .mat-calendar-body-today {
+    box-shadow: none !important; /* Remove shadow for today */
+    border-radius: 0 !important; /* Remove circular radius */
+  }
+  
+  /* Remove the circle for the selected date */
+  ::ng-deep .mat-calendar-body-selected {
+    box-shadow: none !important; /* Remove shadow */
+    border-radius: 0 !important; /* Remove circular radius */
+    background-color: #4CAF50 !important; /* Set selected background */
+    color: white !important; /* Set selected text color */
+  }
+  
+  /* Hover effect for day cells */
+  ::ng-deep .mat-calendar-body-cell:hover {
+    background-color: #fae0e3 !important; /* Hover background color */
+    cursor: pointer;
+    border-radius: 0 !important; /* Remove circular hover effect */
+  }
+  

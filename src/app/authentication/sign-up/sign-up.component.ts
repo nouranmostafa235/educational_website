@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthentcationService } from 'src/app/services/authentcation.service';
 import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,8 +11,8 @@ import Swal from 'sweetalert2'
 })
 export class SignUpComponent {
   constructor(private service: AuthentcationService ,private router :Router) { }
-  //nourMostafa235@gmail.com
-  //12345678
+  //nouranmoustafa@gmail.com
+  //Password#1234
   errorMessages: any[] = []
   isloading:boolean=false
   signUpForm: FormGroup = new FormGroup({
@@ -46,4 +47,5 @@ export class SignUpComponent {
       }
     })
   }
+  
 }

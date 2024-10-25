@@ -1,0 +1,77 @@
+
+<div class="mt-5 ">
+    <div class="d-flex justify-content-end">
+        <button class="btn text-white rounded-5 mb-3"data-bs-toggle="modal" data-bs-target="#exampleModal" >+ Add New Course</button>
+    </div>
+    <div class="scrollable">
+ <table class="table table-striped rounded-3 ">
+        <thead>
+          <tr>
+            <th scope="col">Course Name</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Level</th>
+            <th scope="col">Semester</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of courses">
+            <td >{{i.name}} <br>
+                <span class="text-muted small">{{i.description}}</span>
+            </td>
+            <td>{{i.duration}}</td>
+            <td>{{i.level}}</td>
+            <td>{{i.semester}}</td>
+            <td>
+                <i class="fa-solid fa-eye me-2 action"></i>
+                <i class="fa-solid fa-trash text-danger action" ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Courses</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" (ngSubmit)="addcourse(addForm)" [formGroup]="addForm">
+            <label for="">Course Name</label>
+            <input type="text" class="form-control" name="" id="" formControlName="name">
+
+            <label for="">Course Duration</label>
+            <input type="text" class="form-control" name="" id="" formControlName="duration">
+
+            <label for="">Level</label>
+            <select name="" id="" class="form-select" formControlName="level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            
+            <label for="">Semester</label>
+            <select name="" class="form-select" formControlName="semester" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label for="">Description</label>
+            <textarea name="" id="" formControlName="description" class="form-control"></textarea>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+          </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+

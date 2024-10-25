@@ -1,0 +1,27 @@
+.btn{
+    background-color: rgba(5, 106, 255, 1);
+}
+.action{
+    cursor: pointer;
+}
+.scrollable{
+    height: 400px !important;
+    overflow-y: auto !important; 
+}
+.scrollable::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #056AFF; /* Scrollbar color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
+}
