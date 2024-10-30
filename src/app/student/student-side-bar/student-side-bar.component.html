@@ -1,0 +1,27 @@
+
+<div class="row me-0 ">
+    <div class="col-md-2 ">
+       <div class="sideBar d-flex flex-column justify-content-evenly rounded-end-5">
+    <div class="d-flex flex-row align-items-center ms-3">
+        <img src="assets/imgs/logo.png" class="logo-img " alt="Logo">
+        <h2 class="title">SMARTED</h2>
+    </div>
+    <div class="d-flex flex-column justify-content-between mt-5 align-items-center submeneu">
+        <ul class="list-unstyled ">
+            <li routerLinkActive="active" routerLink="/student" [routerLinkActiveOptions]="{exact: true}" class="mb-4 ps-5 pe-5"><i class="fa-solid fa-house me-1" style="color: #056aff;"></i> Home</li>
+            <li routerLinkActive="active" routerLink="/student/profile" [routerLinkActiveOptions]="{exact: true}"   class="mb-4 ps-5 pe-5"><i class="fa-solid fa-graduation-cap me-1" style="color: #056aff;"></i> Profile
+            </li>
+            <li routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}"  class="mb-4 ps-5 pe-5 "><i class="fa-solid fa-book me-1" style="color: #056aff;"></i> Materials</li>
+        </ul>
+        <button class="btn" (click)="logoutFun()"><i class="fa-solid fa-right-from-bracket me-1" style="color: #056aff;"></i>LogOut</button>
+    </div>
+
+</div> 
+    </div>
+    <div class="col-md-7">
+     <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-3">
+        <app-rightbar></app-rightbar>
+    </div>
+</div>

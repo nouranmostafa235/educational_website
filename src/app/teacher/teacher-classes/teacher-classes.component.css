@@ -1,9 +1,10 @@
-.btn{
-    background-color: rgba(5, 106, 255, 1);
-}
+
 .searchBar{
     background-color:white ;
     box-shadow: 0px 3px 21px -5px rgba(0,0,0,0.75);
+}
+.btn{
+    background-color: rgba(5, 106, 255, 1);
 }
 .title{
     color: #056AFF;

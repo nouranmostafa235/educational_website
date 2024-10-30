@@ -51,7 +51,7 @@
     background-color: #fff5f0;
 }
 .scrollable{
-    height: 300px;
+    height: 350px;
     overflow-y: auto; 
 }
 .scrollable::-webkit-scrollbar {

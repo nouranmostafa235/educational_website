@@ -25,8 +25,8 @@ export class LoginComponent {
       if(response.message==="User logged in successfully."){
         localStorage.setItem('token',"Bearer "+response.data.access_token) 
         this.service.decode() 
-        if(response.data.role==='student'){
-              this.route.navigate([''])
+        if(response.data.user.role==='student'){          
+              this.route.navigate(['/student'])
         }  
         else{
           this.route.navigate(['/teacher'])

@@ -8,8 +8,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthentcationService {
-userData = new BehaviorSubject(null)
-
+ userData = new BehaviorSubject(null)
+headers:any={
+  Authorization:localStorage.getItem("token")
+}
   constructor(private http:HttpClient , private router:Router) { 
     if(localStorage.getItem('token')!==null){
       this.decode()
@@ -23,7 +25,7 @@ userData = new BehaviorSubject(null)
   }
   logOut(){
     localStorage.removeItem('token')
-    this.userData.next(null)
+    this.userData.next(null)    
     this.router.navigate(['/signin'])
   }
   login(loginData:any):Observable<any>{
@@ -31,5 +33,8 @@ userData = new BehaviorSubject(null)
   }
   register(registerData:any):Observable<any>{
     return this.http.post("http://127.0.0.1:8000/api/register",registerData)
+   }
+   getUserByToken():Observable<any>{
+    return this.http.get("http://127.0.0.1:8000/api/user",{headers:this.headers})
    }
 }

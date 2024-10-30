@@ -1,0 +1,83 @@
+<div class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <h2 class="title">Dashboard</h2>
+        <input type="text" name="" id="" class="form-control search rounded-5 w-50" placeholder="search course...">
+    </div>
+    <div class="d-flex justify-content-end mt-5">
+           <button class="btn updateButton ms-auto py-1 px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">
+        Update Profile <i class="fa-regular fa-pen-to-square ms-1" style="color: #ffffff;"></i>
+      </button> 
+    </div>
+
+    <div class="card mx-auto mt-2">
+        <div class="card-body">
+                  <img class="rounded-circle mb-5 d-block mx-auto" src="assets/imgs/profile.jpeg" alt="">
+                 <div class="row mb-0 justify-content-evenly mb-5">
+                <div class="col-md-4 mb-5">
+                    <label for="" class="ms-2">First Name</label>
+                    <input class="form-control p-0 ps-2" [value]="studentData.first_name" type="text" disabled>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <label for=""class="ms-2">Last Name</label>
+                    <input class="form-control p-0 ps-2" [value]="studentData.last_name" type="text" disabled>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <label for=""class="ms-2">ID </label>
+                    <input class="form-control p-0 ps-2" [value]="studentData.custom_id"  type="text" disabled>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <label for=""class="ms-2">Phone </label>
+                    <input class="form-control p-0 ps-2" [value]="studentData.phone" type="text" disabled>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <label for=""class="ms-2">Email </label>
+                    <input class="form-control p-0 ps-2" [value]="studentData.email" type="text" disabled>
+                </div>
+                <div class="col-md-4 mb-5 dropdown mt-3">
+                        <button class="btn btn-secondary dropdown-toggle py-1 px-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Enrolled Courses
+                        </button>
+                        <ul class="dropdown-menu scrollable">
+                          <li><a class="dropdown-item" *ngFor="let i of studentData.enrolled_courses">{{i.name}}</a></li>
+                        </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" (ngSubmit)="updateProfile(updateForm)" [formGroup]="updateForm">
+            <label for="">First Name</label>
+            <input type="text" class="form-control" name="" id="" formControlName="first_name">
+
+            <label for="">Last Name</label>
+            <input type="text" class="form-control" name="" id="" formControlName="last_name">
+
+            
+            <label for="">Phone</label>
+            <input type="text" class="form-control" name="" id="" formControlName="phone">
+
+            
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="" id="" formControlName="email">
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+          </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>

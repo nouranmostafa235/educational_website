@@ -18,6 +18,7 @@ export class TeacherCoursesComponent implements OnInit{
   description:new FormControl(null),
  })
  courses:any
+ searchTerm:string=""
  ngOnInit(): void {
    this.service.viewCourses().subscribe({
     next:(response)=>{

@@ -14,7 +14,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RightbarComponent } from './rightbar/rightbar.component';
 import { TeacherDashboardComponent } from './teacher/teacher-dashboard/teacher-dashboard.component';
 import { TeacherCoursesComponent } from './teacher/teacher-courses/teacher-courses.component';
-
+import { TeacherSearchPipe } from './teacher-search.pipe';
+import { StudentSideBarComponent } from './student/student-side-bar/student-side-bar.component';
+import { StudentDashBoardComponent } from './student/student-dash-board/student-dash-board.component';
+import { TeacherClassesComponent } from './teacher/teacher-classes/teacher-classes.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BaseChartDirective } from 'ng2-charts';
+import { ProfileComponent } from './student/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +32,12 @@ import { TeacherCoursesComponent } from './teacher/teacher-courses/teacher-cours
     SidebarComponent,
     RightbarComponent,
     TeacherDashboardComponent,
-    TeacherCoursesComponent
+    TeacherCoursesComponent,
+    TeacherSearchPipe,
+    StudentSideBarComponent,
+    StudentDashBoardComponent,
+    TeacherClassesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +47,9 @@ import { TeacherCoursesComponent } from './teacher/teacher-courses/teacher-cours
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
+    CarouselModule,
+    BrowserAnimationsModule,
+    BaseChartDirective
   ],
   providers: [],
   bootstrap: [AppComponent]

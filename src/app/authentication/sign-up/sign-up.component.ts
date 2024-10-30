@@ -13,6 +13,8 @@ export class SignUpComponent {
   constructor(private service: AuthentcationService ,private router :Router) { }
   //nouranmoustafa@gmail.com
   //Password#1234
+  //mohammedelsedawy@gmail.com
+  
   errorMessages: any[] = []
   isloading:boolean=false
   signUpForm: FormGroup = new FormGroup({
