@@ -9,6 +9,7 @@ import { AuthentcationService } from '../services/authentcation.service';
 export class RightbarComponent implements OnInit{
  constructor(private service:AuthentcationService){}
 userInfo:any
+@Input() dataFromParent:any
 ngOnInit(): void {  
   this.service.getUserByToken().subscribe({
     next:(res)=>{

@@ -9,6 +9,7 @@ import { AuthentcationService } from 'src/app/services/authentcation.service';
 export class StudentSideBarComponent implements OnInit{
   constructor(private service:AuthentcationService, private route:Router){}
   ParentuserInfo:any
+  data:string="from Parenst"
   ngOnInit(): void {
    this.service.getUserByToken().subscribe({
     next:(response)=>{

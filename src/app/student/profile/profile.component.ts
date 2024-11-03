@@ -29,7 +29,6 @@ export class ProfileComponent implements OnInit{
           last_name:this.studentData.last_name,
           phone:this.studentData.phone,
           email:this.studentData.email,
-
         })
       }
     })

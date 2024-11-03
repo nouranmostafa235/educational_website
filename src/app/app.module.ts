@@ -8,7 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RightbarComponent } from './rightbar/rightbar.component';
@@ -22,6 +22,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseChartDirective } from 'ng2-charts';
 import { ProfileComponent } from './student/profile/profile.component';
+import { AddheadersInterceptor } from './addheaders.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,11 @@ import { ProfileComponent } from './student/profile/profile.component';
     BrowserAnimationsModule,
     BaseChartDirective
   ],
-  providers: [],
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass:AddheadersInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,18 +27,11 @@ export class StudentDashBoardComponent implements OnInit, AfterViewInit {
     });
   }
   updateChartLabelsAndData(): void {
-    // Extract labels from studentCourses
     const labels = this.studentCourses.map((course: any) => course.name); 
-
-    // Update the chart configuration with dynamic labels
     this.config.data.labels = labels;
-
-    // If you want to set specific data for each course, adjust the datasets as needed
     this.config.data.datasets.forEach((dataset: any) => {
-      dataset.data = this.studentCourses.map(() => Math.floor(Math.random() * 100)); // Example data, replace with actual data
+      dataset.data = this.studentCourses.map(() => Math.floor(Math.random() * 100));
     });
-
-    // Re-render the chart with updated data
     if (this.chart) {
       this.chart.update();
     }
@@ -73,8 +66,8 @@ export class StudentDashBoardComponent implements OnInit, AfterViewInit {
         {
           label: 'Subject',
           data: [], 
-          backgroundColor: "blue"
-        },       
+          backgroundColor: "red"
+        },        
       ]
     },
     options: {

@@ -14,6 +14,8 @@ export class SignUpComponent {
   //nouranmoustafa@gmail.com
   //Password#1234
   //mohammedelsedawy@gmail.com
+  //stu123@gmail.com
+  //Student123#
   
   errorMessages: any[] = []
   isloading:boolean=false

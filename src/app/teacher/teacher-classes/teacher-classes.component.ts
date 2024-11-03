@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class TeacherClassesComponent implements OnInit{
   courses:any
   students:any
-  id:string="20240010"
+  isloading:boolean=true  
   addStudent:FormGroup=new FormGroup({
     courseId:new FormControl(null),
     student_id:new FormControl(null),
@@ -21,6 +21,7 @@ constructor(private auth :AuthentcationService , private features:TeacherFeature
 ngOnInit(): void {
   this.auth.getUserByToken().subscribe({
     next:(response)=>{
+      this.isloading=false
       this.courses=response.data.user.assigned_courses
       this.students=response.data.user.assigned_courses[0].students
       console.log(this.students);
